@@ -1,0 +1,5 @@
+bbox_model_weight: 'yolo11n.pt'
+bbox_classes: [0]
+
+# outline_model_weight: 'sam_vit_b_01ec64.pth'
+outline_model_weight: 'sam_vit_l_0b3195.pth'
