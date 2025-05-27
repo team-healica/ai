@@ -1,5 +1,9 @@
-bbox_model_weight: 'yolo11n.pt'
+bbox_model_weight: 'yolo12x.pt'
 bbox_classes: [0]
 
 # outline_model_weight: 'sam_vit_b_01ec64.pth'
-outline_model_weight: 'sam_vit_l_0b3195.pth'
+sm_version: 2
+outline_model_weight: 'sam_vit_l_0b3195.pth'      # segment anything
+outline_model_weight: 'facebook/sam2-hiera-large' # segment anything2
+
+dataset: 'dataset4'

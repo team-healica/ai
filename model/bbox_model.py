@@ -1,5 +1,5 @@
 from ultralytics import YOLO
-import cv2
+import numpy as np
 
 class BBOX:
     def __init__(self, args):
@@ -9,11 +9,22 @@ class BBOX:
         self.bbox_classes = self.args['bbox_classes']
     
     def get_bbox(self, img):
-        results = self.model(img, classes=self.bbox_classes)
+        res = self.model(img, classes=self.bbox_classes)
+        if len(res) != 1: raise
         
-        bbox_lst = []
-        for result in results:
-            xyxy_lst = result.boxes.xyxy.cpu().detach().numpy()
-            xyxy_lst = xyxy_lst.astype('int')
-            bbox_lst.append(xyxy_lst)
-        return bbox_lst
+        results = res[0]
+        max_bbox = None
+        max_area = -np.inf
+        for i, result in enumerate(results):
+            _, _, w, h = result.boxes.xywhn.cpu().detach().numpy()[0]
+            area = w * h
+            
+            if area > max_area:
+                max_area = area
+                max_bbox = result.boxes.xyxy.cpu().detach().numpy()[0]
+            
+            ### if you want to image with bounding boxes
+            # result.save(f'data/{i}.png')
+        
+        bbox = max_bbox.astype('int')
+        return bbox
