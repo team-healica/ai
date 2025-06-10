@@ -14,8 +14,6 @@ RUN git clone https://github.com/team-healica/ai.git
 
 WORKDIR /app/ai
 
-CMD ["ls"]
-
 RUN pip3 install -r requirements.txt
 
 EXPOSE 3000
