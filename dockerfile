@@ -23,6 +23,6 @@ RUN apt-get update -y && \
     apt-get install -y libgl1-mesa-glx && \
     apt-get install -y libglib2.0-0
 
-EXPOSE 3000
+EXPOSE 5000
 
-CMD ["uvicorn", "server:app", "--port=3000"]
+CMD ["uvicorn", "server:app", "--port=5000"]
