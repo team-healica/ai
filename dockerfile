@@ -25,4 +25,4 @@ RUN apt-get update -y && \
 
 EXPOSE 3000
 
-CMD ["uvicorn", "server:app" "--port=3000"]
+CMD ["uvicorn", "server:app", "--port=3000"]
