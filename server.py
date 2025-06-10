@@ -12,7 +12,7 @@ app = FastAPI()
 
 @app.get('/')
 def home():
-    return "Hello World~"
+    return "Main Page"
 
 @app.post('/outline')
 async def get_outline(file: UploadFile):

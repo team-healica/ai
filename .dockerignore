@@ -1,0 +1,22 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+/data
+/result
+/Lib
+/Include
+/Scripts
+/share
+pyvenv.cfg
+
+/model/*.pth
+/model/*.pt
+/model/__pycache__
+
+/reference
+/etc
+
+__pycache__/
+**/__pycache__/
