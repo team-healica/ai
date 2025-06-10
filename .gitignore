@@ -12,3 +12,5 @@ pyvenv.cfg
 
 /reference
 /etc
+
+__pycache__/

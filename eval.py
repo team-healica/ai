@@ -35,6 +35,7 @@ if __name__ == '__main__':
     for i, img_file in enumerate(img_files):
         ### preprocessing
         img = cv2.imread(img_file)
+        h, w, c = img.shape
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         rectangle_img = img.copy()
         result_img = img.copy()
@@ -51,6 +52,9 @@ if __name__ == '__main__':
         
         mask = np.array(mask, dtype=np.uint8)
         mask[mask == 1] = 255
+        
+        # test
+        cv2.imwrite(f'{folder_name}/{i + 100}.jpg', mask.reshape(h, w, 1))
                 
         kernel = np.zeros((10, 10), dtype=np.uint8)
         mask_ = cv2.morphologyEx(mask[0], cv2.MORPH_CLOSE, kernel)
