@@ -6,4 +6,7 @@ sm_version: 2
 outline_model_weight: 'sam_vit_l_0b3195.pth'      # segment anything
 outline_model_weight: 'facebook/sam2-hiera-large' # segment anything2
 
+# pose estimator weight
+pose_estimator_checkpoint: yolo11x-pose.pt
+
 dataset: 'dataset4'
