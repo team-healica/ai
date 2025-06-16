@@ -18,7 +18,6 @@ RUN git clone https://github.com/team-healica/ai.git
 WORKDIR /app/ai/
 
 RUN pip3 install -r requirements.txt
-# RUN pip3 install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
 
 RUN apt-get update -y && \
     apt-get install -y libgl1-mesa-glx && \
